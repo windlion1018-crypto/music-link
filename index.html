@@ -12,14 +12,36 @@
     }
 
     body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      background: #111;
-      color: white;
-      display: flex;
-      justify-content: center;
-    }
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background: #111;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -40px;
+  background-image: url("IMG_5114.jpeg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(35px);
+  transform: scale(1.15);
+  opacity: 0.65;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
 
     .container {
       width: 100%;
@@ -60,20 +82,34 @@
     }
 
     .service {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 18px 20px;
-      margin: 12px 0;
-      background: #202020;
-      color: white;
-      text-decoration: none;
-      border-radius: 14px;
-      font-size: 17px;
-      font-weight: 600;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 20px;
+  margin: 12px 0;
+  background: rgba(35, 35, 35, 0.65);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 17px;
+  font-weight: 600;
+}
+    .service-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
+.service-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
     .service:active {
       transform: scale(.98);
     }
